@@ -322,9 +322,9 @@ def backprop_linear_layer(dA, cache, activation_function):
         raise ValueError("Invalid activation function")
 
     # backprop through the summation function
-    dW = A_prev.T @ dZ / M
-    db = np.sum(dZ, axis=0, keepdims=True).T / M
-    dA_prev = dZ @ W.T / M
+    dW = A_prev.T @ dZ
+    db = np.sum(dZ, axis=0, keepdims=True).T
+    dA_prev = dZ @ W.T
     #####################################################
     # END CODE HERE
     #####################################################
